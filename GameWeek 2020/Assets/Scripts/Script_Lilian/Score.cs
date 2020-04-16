@@ -30,20 +30,21 @@ public class Score : MonoBehaviour
     
     private void Start()
     {
-        StartCoroutine(nameof(StartTimer));
+        StartCoroutine(nameof(ScoreDecrease));
     }
 
-    IEnumerator StartTimer()
+    IEnumerator ScoreDecrease()
     {
         WaitForSecondsRealtime timeToWait = new WaitForSecondsRealtime(m_timeToWait);
-        m_countryScore -= m_pointsToLoose;
-
-        yield return timeToWait;
         
         if (m_countryScore > 0)
-            yield return StartCoroutine(nameof(StartTimer));
-        else
-            yield return null;
+            m_countryScore -= m_pointsToLoose;
+
+        if (m_countryScore < 0)
+            m_countryScore = 0;
+
+        yield return timeToWait;
+        yield return StartCoroutine(nameof(ScoreDecrease));
     }
 
     private void OnTriggerEnter(Collider other)
@@ -69,7 +70,11 @@ public class Score : MonoBehaviour
             if (item.name != dontLike.name)
                 continue;
 
-            m_countryScore -= m_pointsToLoose;
+            if (m_countryScore > 0)
+                m_countryScore -= m_pointsToLoose;
+
+            if (m_countryScore < 0)
+                m_countryScore = 0;
         }
         
         Destroy(other.gameObject);

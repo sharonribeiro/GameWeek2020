@@ -93,9 +93,8 @@ public class CraftingTable : MonoBehaviour
         if (firstItemLocation < 0 || secondItemLocation < 0)
             return false;
         
-        //now destroy the item
-        Destroy(tmpInv[firstItemLocation]);
-        Destroy(tmpInv[secondItemLocation]);
+        m_playerInventory.RemoveAt(firstItemLocation);
+        m_playerInventory.RemoveAt(secondItemLocation);
         
         return true;
     }

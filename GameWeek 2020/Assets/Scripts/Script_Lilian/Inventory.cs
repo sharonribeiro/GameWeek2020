@@ -82,4 +82,12 @@ public class Inventory : MonoBehaviour
     {
         ThrowSelectedItem(p_id);
     }
+
+    public void RemoveAt(int p_id)
+    {
+        var item = m_inventoryList[p_id];
+        Destroy(item);
+        m_inventoryList[p_id] = null;
+        m_inventoryImages[p_id].sprite = m_defaultSprite;
+    }
 }
