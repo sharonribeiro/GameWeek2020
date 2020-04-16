@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 3923606706714928113}
   - component: {fileID: 1138139937879536235}
   - component: {fileID: 6934478227878828584}
+  - component: {fileID: 2770940582421568605}
   - component: {fileID: 3480766986104547572}
   - component: {fileID: 8817406311428280333}
+  - component: {fileID: 5173188801228101441}
   m_Layer: 0
   m_Name: ball_blue
   m_TagString: Untagged
@@ -95,6 +97,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &2770940582421568605
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994235642858485395}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.75
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3480766986104547572
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,3 +142,16 @@ MonoBehaviour:
     type: 3}
   m_secondItem: {fileID: 592117145338180134, guid: bc1a257f6f0582443af73ee0bc141c16,
     type: 3}
+--- !u!114 &5173188801228101441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994235642858485395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e4b0f26d4c1f8343badeeca63eba6db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: BallBlue

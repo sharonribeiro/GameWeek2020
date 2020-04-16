@@ -5,4 +5,5 @@ using UnityEngine;
 public class Collectible : MonoBehaviour
 {
     public string name;
+    public Sprite icon;
 }

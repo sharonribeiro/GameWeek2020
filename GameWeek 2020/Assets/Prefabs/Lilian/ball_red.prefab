@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2664678720976402314}
   - component: {fileID: -1376163191195650065}
   - component: {fileID: -7854345490363803723}
+  - component: {fileID: -3218484028076033875}
   m_Layer: 0
   m_Name: ball_red
   m_TagString: Untagged
@@ -127,3 +128,16 @@ MonoBehaviour:
     type: 3}
   m_secondItem: {fileID: -4398909122842518315, guid: 65493223759a27f449b6be8f6f34553b,
     type: 3}
+--- !u!114 &-3218484028076033875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6622045671786142258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e4b0f26d4c1f8343badeeca63eba6db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: BallRed

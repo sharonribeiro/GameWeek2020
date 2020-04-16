@@ -6,7 +6,6 @@ using UnityEngine;
 public class PickUpSystem : MonoBehaviour
 {
     [SerializeField] private Inventory m_inventory = null;
-
     [SerializeField] private GameObject m_collectibleItem = null;
     
     public void Initialize(Inventory p_inventory)
@@ -28,15 +27,15 @@ public class PickUpSystem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Collectible"))
+        if (!other.GetComponent<Collectible>())
             return;
-
+            
         m_collectibleItem = other.gameObject;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (!other.CompareTag("Collectible"))
+        if (!other.GetComponent<Collectible>())
             return;
         
         m_collectibleItem = null;
