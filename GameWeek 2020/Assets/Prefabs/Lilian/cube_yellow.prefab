@@ -138,3 +138,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: CubeYellow
+  icon: {fileID: 21300000, guid: c74d23e4e67746d40bb5ba6c7922c585, type: 3}

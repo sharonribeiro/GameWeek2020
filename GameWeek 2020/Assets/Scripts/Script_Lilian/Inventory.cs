@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -10,7 +10,10 @@ public class Inventory : MonoBehaviour
     [SerializeField] private int m_maxInventory = 4;
     
     [SerializeField] private List<GameObject> m_inventoryList = new List<GameObject>();
+    [SerializeField] private List<Image> m_inventoryImages;
     [SerializeField] private int m_itemSelection = 0;
+    
+    private Sprite m_defaultSprite;
 
     public List<GameObject> GetInventory()
     {
@@ -20,10 +23,13 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         for (int i = 0; i < m_maxInventory; ++i)
+        {
             m_inventoryList.Add(null);
-        
+        }
+
         var ps = gameObject.AddComponent<PickUpSystem>();
         ps.Initialize(this);
+        m_defaultSprite = m_inventoryImages[0].sprite;
     }
 
     public bool AddNewItem(GameObject m_item)
@@ -33,6 +39,8 @@ public class Inventory : MonoBehaviour
             if (!m_inventoryList[i])
             {
                 m_inventoryList[i] = m_item;
+                if (m_item.GetComponent<Collectible>())
+                    m_inventoryImages[i].sprite = m_item.GetComponent<Collectible>().icon;
                 return true;
             }
         }
@@ -64,6 +72,14 @@ public class Inventory : MonoBehaviour
         GameObject go = m_inventoryList[p_id];
         go.transform.position = (transform.position + dropingDistance);
         go.SetActive(true);
+        
         m_inventoryList[p_id] = null;
+        
+        m_inventoryImages[p_id].sprite = m_defaultSprite;
+    }
+
+    public void DropUIItem(int p_id)
+    {
+        ThrowSelectedItem(p_id);
     }
 }
