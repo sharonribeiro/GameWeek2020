@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Managers;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
@@ -51,6 +52,19 @@ public class MainMenu : MonoBehaviour
     {
         m_soundPanel.SetActive(false);
         OpenMainPanel();
+    }
+
+    public void ChangeMusicVolume(float p_value)
+    {
+        AudioManager instance = AudioManager.instance;
+        instance.SetVolume(instance.m_ambientMusicAudioSource, p_value);
+    }
+
+    public void ChangeFXVolume(float p_value)
+    {
+        AudioManager instance = AudioManager.instance;
+        instance.SetVolume(instance.m_oneShotAudioSource, p_value);
+        instance.SetVolume(instance.m_loopAudioSource, p_value);
     }
 
     public void CloseCreditsPanel()
