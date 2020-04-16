@@ -17,6 +17,12 @@ public class SpawnItem : MonoBehaviour
         StartCoroutine(nameof(StartSpawn));
     }
 
+    void OnDrawGizmos()
+    {
+        Gizmos.color = new Vector4(0, 1, 0, 0.3f);
+        Gizmos.DrawSphere(transform.position, m_spawnRadius);
+    }
+
     IEnumerator StartSpawn()
     {
         WaitForSecondsRealtime timeToWait = new WaitForSecondsRealtime(m_spawningRate);
