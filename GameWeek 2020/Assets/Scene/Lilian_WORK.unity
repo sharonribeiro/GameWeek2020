@@ -1958,6 +1958,7 @@ MonoBehaviour:
   m_dontLikes:
   - {fileID: -4398909122842518315, guid: 65493223759a27f449b6be8f6f34553b, type: 3}
   m_countryScore: 40
+  m_scoreObjective: 50
   m_pointsToLoose: 2
   m_timeToWait: 5
   m_scoreGain: 5
@@ -2054,6 +2055,7 @@ MonoBehaviour:
   m_dontLikes:
   - {fileID: -280155678531275191, guid: c79542279964f3b4b9131f509c61d242, type: 3}
   m_countryScore: 40
+  m_scoreObjective: 50
   m_pointsToLoose: 2
   m_timeToWait: 5
   m_scoreGain: 5
@@ -2077,6 +2079,7 @@ MonoBehaviour:
   m_dontLikes:
   - {fileID: -280155678531275191, guid: c79542279964f3b4b9131f509c61d242, type: 3}
   m_countryScore: 40
+  m_scoreObjective: 50
   m_pointsToLoose: 2
   m_timeToWait: 5
   m_scoreGain: 5
@@ -2092,8 +2095,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c70adcc2dee1834d967eb8285e184b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_timeInMinute: 5
+  m_timeInMinute: 0.1
   m_timeInSeconds: 0
+  m_countryScores:
+  - {fileID: 1902563381}
+  - {fileID: 1902563380}
+  - {fileID: 1902563375}
 --- !u!1001 &1320599167071097239
 PrefabInstance:
   m_ObjectHideFlags: 0
