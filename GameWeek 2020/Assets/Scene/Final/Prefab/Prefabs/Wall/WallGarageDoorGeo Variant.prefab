@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &4181105836904511538
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626486319628013004}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.12769, y: 4.997627, z: 0.43523926}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &8903709833285244101
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65,7 +78,13 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: f022d83e0f4ee47458d0366435bf8364,
         type: 3}
       propertyPath: m_Name
-      value: WallGarageDoorGeo
+      value: WallGarageDoorGeo Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f022d83e0f4ee47458d0366435bf8364, type: 3}
+--- !u!1 &626486319628013004 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: f022d83e0f4ee47458d0366435bf8364,
+    type: 3}
+  m_PrefabInstance: {fileID: 8903709833285244101}
+  m_PrefabAsset: {fileID: 0}
