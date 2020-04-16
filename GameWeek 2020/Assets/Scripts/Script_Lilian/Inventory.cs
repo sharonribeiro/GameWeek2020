@@ -12,6 +12,11 @@ public class Inventory : MonoBehaviour
     [SerializeField] private List<GameObject> m_inventoryList = new List<GameObject>();
     [SerializeField] private int m_itemSelection = 0;
 
+    public List<GameObject> GetInventory()
+    {
+        return m_inventoryList; 
+    }
+    
     private void Start()
     {
         for (int i = 0; i < m_maxInventory; ++i)
