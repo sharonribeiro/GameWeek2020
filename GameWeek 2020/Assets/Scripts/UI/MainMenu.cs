@@ -39,13 +39,13 @@ public class MainMenu : MonoBehaviour
 
     public void OpenSoundPanel()
     {
-        m_mainPanel.SetActive(true);
+        m_mainPanel.SetActive(false);
         m_soundPanel.SetActive(true);
     }
 
     public void OpenCreditsPanel()
     {
-        m_mainPanel.SetActive(true);
+        m_mainPanel.SetActive(false);
         m_creditsPanel.SetActive(true);
     }
 
