@@ -42,6 +42,7 @@ public class MainMenu : MonoBehaviour
         m_mainPanel.SetActive(true);
         m_soundPanel.SetActive(true);
     }
+
     public void OpenCreditsPanel()
     {
         m_mainPanel.SetActive(true);
