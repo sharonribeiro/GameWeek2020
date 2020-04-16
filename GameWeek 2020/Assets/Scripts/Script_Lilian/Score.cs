@@ -2,21 +2,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
+[RequireComponent(typeof(BoxCollider))]
 public class Score : MonoBehaviour
 {
     [SerializeField] private Sprite m_flag = null;
-    
-    [Header("Preferences")]
-    [SerializeField] private List<Collectible> m_likes = new List<Collectible>();
+
+    [Header("Preferences")] [SerializeField]
+    private List<Collectible> m_likes = new List<Collectible>();
+
     [SerializeField] private List<Collectible> m_dontLikes = new List<Collectible>();
-    
-    [Header("Score settings")]
-    [SerializeField] private float m_countryScore = 40.0f;
+
+    [Header("Score settings")] [SerializeField]
+    private float m_countryScore = 40.0f;
+
     [SerializeField] private float m_scoreObjective = 50.0f;
     [SerializeField] private float m_pointsToLoose = 1.0f;
     [SerializeField] private float m_timeToWait = 1.0f;
     [SerializeField] private float m_scoreGain = 5.0f;
+
+    [SerializeField] private Image m_flagIconTarget;
+    [SerializeField] private Image m_gaugeObj;
+    [SerializeField] private Image m_gaugeCurrent;
 
     public float GetScore()
     {
@@ -27,10 +35,22 @@ public class Score : MonoBehaviour
     {
         return m_scoreObjective;
     }
-    
+
     private void Start()
     {
         StartCoroutine(nameof(ScoreDecrease));
+        m_flagIconTarget.sprite = m_flag;
+        m_gaugeObj.fillAmount = m_scoreObjective * 0.01f;
+    }
+
+    private void Update()
+    {
+        UpdateUI();
+    }
+
+    void UpdateUI()
+    {
+        m_gaugeCurrent.fillAmount = GetScore() * 0.01f;
     }
 
     IEnumerator ScoreDecrease()
