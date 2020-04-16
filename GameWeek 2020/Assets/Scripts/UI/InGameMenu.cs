@@ -40,6 +40,7 @@ public class InGameMenu : MonoBehaviour
     public void ToggleMainPanel()
     {
         m_mainPanel.SetActive(!m_mainPanel.activeSelf);
+        m_soundPanel.SetActive(false);
     }
 
     // Update is called once per frame
