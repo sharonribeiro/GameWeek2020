@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: cbfe36cfddfde964d9dfce63a355d5dd
+    path: Assets/Scene/Main Menu.unity
+    guid: c75fb6a962edf7640a1d1671d5cd863f
+  - enabled: 1
+    path: Assets/Scene/SceneFilipe.unity
+    guid: f2d42f6515de0f04b858502b9b506df6
+  - enabled: 1
+    path: Assets/Scene/Lilian_WORK.unity
+    guid: ba4bc927d621e2543bee83541560c832
   m_configObjects: {}
