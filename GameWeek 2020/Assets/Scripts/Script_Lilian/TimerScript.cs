@@ -12,7 +12,9 @@ public class TimerScript : MonoBehaviour
     
     private void Start()
     {
-        nextLevel.gameObject.SetActive(false);
+        if(nextLevel)
+            nextLevel.gameObject.SetActive(false);
+        
         m_timeInSeconds = m_timeInMinute * 60.0f;
         StartCoroutine(nameof(StartTimer));
     }
@@ -21,7 +23,9 @@ public class TimerScript : MonoBehaviour
     {
         int i = CalculateScore();
         Debug.Log("Times up with score : " + i);
-        nextLevel.gameObject.SetActive(true);
+        
+        if(nextLevel)
+            nextLevel.gameObject.SetActive(true);
     }
 
     private int CalculateScore()
